@@ -17,7 +17,7 @@
     <a class="skip" href="#main">本文へ移動</a>
     <header class="header wrap">
       <a class="brand" href="./" aria-label="PipoPapo ホーム"><img class="brand-icon" src="./assets/icon.svg?v=2" width="33" height="33" alt="">PipoPapo<span class="cli-label">CLI</span></a>
-      <nav aria-label="メインナビゲーション"><a href="#sounds">音を聴く</a><a href="#usage">使い方</a><a class="nav-cta" href="#start">はじめる <span aria-hidden="true">↗</span></a></nav>
+      <nav aria-label="メインナビゲーション"><a href="#sounds">音を聴く</a><a href="./commands.html">コマンド</a><a class="nav-cta" href="#start">はじめる <span aria-hidden="true">↗</span></a></nav>
     </header>
     <main id="main">
       <section class="hero wrap" aria-labelledby="hero-title">
@@ -46,7 +46,7 @@
         <p class="small-note">サンプルは同じCLIで生成した音です。イベント名そのものに専用の音色があるわけではなく、本文と設定で音が変わります。人の声で文章を読み上げる機能ではありません。</p>
       </section>
       <section class="usage-section" id="usage" aria-labelledby="usage-title"><div class="wrap usage-layout">
-        <div><p class="eyebrow">02 / MAKE SOME NOISE</p><h2 id="usage-title">いつものコマンドに、<br>ひとさじの音を。</h2><p class="section-copy">短いメッセージを鳴らす。ビルドの完了を知らせる。<br>WAVに書き出して、別の場所で使う。<br>必要なときに、必要な音だけ。</p><div class="feature-list"><p><span>01</span> 電子音・口笛・電話音をミックス</p><p><span>02</span> 音量と再生時間をコマンドで調整</p><p><span>03</span> WAV生成は音声デバイスなしでも</p></div></div>
+        <div><p class="eyebrow">02 / MAKE SOME NOISE</p><h2 id="usage-title">いつものコマンドに、<br>ひとさじの音を。</h2><p class="section-copy">短いメッセージを鳴らす。ビルドの完了を知らせる。<br>WAVに書き出して、別の場所で使う。<br>必要なときに、必要な音だけ。</p><p><a class="text-link" href="./commands.html">コマンドの詳細・全オプションを見る →</a></p><div class="feature-list"><p><span>01</span> 電子音・口笛・電話音をミックス</p><p><span>02</span> 音量と再生時間をコマンドで調整</p><p><span>03</span> WAV生成は音声デバイスなしでも</p></div></div>
         <div class="terminal"><div class="terminal-bar"><span aria-hidden="true">● ● ●</span><span>YOUR TERMINAL</span></div><pre><code><span class="comment"># Say it in beeps.</span>
 <span class="prompt">$</span> pppp say "こんにちは" \
     --volume 20 --max-duration 2

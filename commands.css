@@ -1,0 +1,45 @@
+.reference { padding-bottom: 80px; }
+.reference-intro { padding: 54px 0 52px; border-bottom: 1px solid var(--line); }
+.reference-intro h1 { font-size: 44px; line-height: 1.6; margin-bottom: 20px; }
+.reference-layout { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 60px; align-items: start; }
+.reference-toc { position: sticky; top: 28px; padding-top: 32px; }
+.reference-toc nav { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+.reference-toc .eyebrow { margin-bottom: 14px; font-size: 9px; }
+.reference-toc a { padding: 5px 0; font-size: 12px; color: var(--muted); }
+.reference-toc a:hover { color: var(--ink); }
+.reference-section { padding: 38px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 10px; }
+.reference-section h2 { font-size: 25px; overflow-wrap: anywhere; }
+.reference-section h3 { font-size: 18px; margin-top: 30px; }
+.reference-section p { font-size: 14px; line-height: 2; }
+.reference-section a { text-decoration: underline; text-underline-offset: 3px; }
+.reference-section code { font-family: var(--mono); font-size: .92em; overflow-wrap: anywhere; }
+.reference-section p code, .reference-section td code { background: #e8ebdf; padding: 2px 4px; border-radius: 3px; }
+.reference-section pre { background: var(--ink); color: #e7ebdf; border-radius: 9px; padding: 22px; margin: 20px 0; font-size: 12px; line-height: 1.9; }
+.reference-section pre code { font-size: inherit; }
+.reference-note { background: #e8eecf; border-left: 3px solid #8ba04b; padding: 16px 20px; font-size: 13px; line-height: 2; margin-top: 20px; }
+.table-scroll { overflow-x: auto; margin: 20px 0; border: 1px solid var(--line); border-radius: 8px; }
+.table-scroll:focus-visible { outline: 3px solid #476325; outline-offset: 3px; }
+.reference table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12px; line-height: 1.9; }
+.reference th { background: #e9ecdf; font-weight: 600; }
+.reference th, .reference td { padding: 12px 14px; vertical-align: top; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.reference tr:last-child td { border-bottom: none; }
+.reference td:first-child { min-width: 130px; }
+@media (max-width: 900px) {
+  .reference-layout { grid-template-columns: 155px minmax(0, 1fr); gap: 28px; }
+  .reference-section h2 { font-size: 23px; }
+}
+@media (max-width: 650px) {
+  .reference-intro { padding-top: 28px; padding-bottom: 30px; }
+  .reference-intro h1 { font-size: 33px; letter-spacing: -1px; }
+  .reference-layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .reference-toc { position: static; padding-top: 25px; }
+  .reference-toc nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px 14px; }
+  .reference-toc .eyebrow { grid-column: 1 / -1; }
+  .reference-toc nav a { display: block; font-size: 11px; overflow-wrap: anywhere; }
+  .reference-section { padding: 30px 0; }
+  .reference-section h2 { font-size: 22px; }
+  .reference-section p { font-size: 13px; }
+  .reference-section pre { padding: 17px; font-size: 11px; }
+  .reference th, .reference td { padding: 10px; }
+  .reference table { min-width: 460px; }
+}
