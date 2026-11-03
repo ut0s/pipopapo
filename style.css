@@ -5,3 +5,26 @@
 @media(max-width:650px){.hero,.usage-layout,.start-grid{grid-template-columns:minmax(0,1fr)}.hero>*{min-width:0}.sound-machine{max-width:100%}.wave i{min-width:0}}
 @media(max-width:360px){.cli-label{display:none}nav>a[href="#usage"],nav>a[href="./commands.html"]{display:none}.hero-copy h1{font-size:38px}.hero-actions{gap:15px}.button{padding:12px 15px;gap:16px}.screen-bottom{font-size:8px}.machine-caption{font-size:7px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* English headings use spacing suited to Latin text. */
+html[data-localizing] body { visibility: hidden; }
+html:lang(en) h1 { letter-spacing: -1.5px; line-height: 1.25; }
+html:lang(en) .hero h1 { font-size: clamp(38px, 4.1vw, 56px); }
+html:lang(en) .voice:after { bottom: -2px; height: 17px; }
+html:lang(en) .section-heading h2 { line-height: 1.4; }
+html:lang(en) .hero-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+html:lang(en) .sound-caption { font-size: 10px; }
+html:lang(en) .sound-card h3 { font-size: 21px; }
+@media (max-width: 900px) {
+  html:lang(en) .hero-actions { gap: 18px; }
+  html:lang(en) .hero-actions .button { gap: 12px; padding-inline: 18px; }
+}
+@media (max-width: 650px) {
+  html:lang(en) .hero h1 { font-size: 43px; }
+  html:lang(en) .hero-actions { flex-wrap: wrap; }
+}
+@media (max-width: 360px) {
+  html:lang(en) .hero h1 { font-size: 37px; }
+  html:lang(en) .header nav { gap: 0; }
+  html:lang(en) .header .nav-cta { padding-inline: 10px; }
+}
