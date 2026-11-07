@@ -3,6 +3,10 @@
 (() => {
   // Japanese source strings are the keys for the English translation catalog.
   const english = {
+  "紹介動画": "Watch PipoPapo in action",
+  "PipoPapoの使い方を動画で紹介します。": "See how to use PipoPapo in this short demo.",
+  "YouTubeで見る ↗": "Watch on YouTube ↗",
+  "PipoPapoの紹介動画": "PipoPapo introduction video",
   "PipoPapoは、ターミナルの完了・入力待ち・失敗を電子音で知らせるCLI。Codex / Claude Codeと連携し、作業の変化を音で届けます。": "PipoPapo is a CLI that turns task completion, input requests, and failures into electronic sounds. Works with Codex and Claude Code.",
   "PipoPapo — ターミナルに、ちいさな声を。": "PipoPapo — A little voice for your terminal.",
   "電子音と口笛で、作業の変化をお知らせ。Codex / Claude Codeと使える通知CLI。": "Beeps and whistles for your workflow. An audio notification CLI for Codex and Claude Code.",
@@ -60,6 +64,7 @@
   "Homebrewからインストールできます。": "Available through Homebrew.",
   "次のコマンドで、すぐに使いはじめられます。": "Run this command to get started.",
   "macOS 13以降、Apple Silicon / Intelに対応。": "macOS 13 or later. Apple Silicon and Intel.",
+  "macOS 13以降、Apple Silicon / Intel、Linux（x86_64）に対応。": "macOS 13 or later (Apple Silicon/Intel), Linux (x86_64).",
   "v0.1.0 リリース ↗": "v0.1.0 release ↗",
   "エージェントと、いっしょに。": "At home with your agent.",
   "の導入後、使うホストを選んでセットアップ。": " installed? Choose your host to set up the plugin.",
@@ -84,6 +89,7 @@
   "入力・終了コード": "Input and exit codes",
   "まずは、ひとつ鳴らしてみる。": "Start with a little sound.",
   "macOS 13以降、Apple Silicon / Intelに対応。Homebrewで導入したら、短い本文を渡して試せます。": "Supports macOS 13 or later on Apple Silicon and Intel. Install with Homebrew, then try a short message.",
+  "macOS 13以降、Apple Silicon / Intel、Linux（x86_64）に対応。Homebrewで導入したら、短い本文を渡して試せます。": "Supports macOS 13 or later on Apple Silicon and Intel, and Linux (x86_64). Install with Homebrew, then try a short message.",
   "brew install ut0s/pipopapo/pppp\npppp say \"こんにちは\" --volume 20 --max-duration 2\npppp --help\npppp say --help": "brew install ut0s/pipopapo/pppp\npppp say \"Hello\" --volume 20 --max-duration 2\npppp --help\npppp say --help",
   "。本文から電子音・口笛・電話音を合成します。人の声で文章を読み上げる機能ではありません。": ". It synthesizes electronic tones, whistles, and telephone sounds from text, rather than reading the text aloud. ",
   "はヘルプ、": " shows help; ",
@@ -273,14 +279,15 @@
         texts.push({ node, original: node.nodeValue, key });
       }
     }
-    for (const element of document.querySelectorAll("[aria-label], [alt], meta[content]")) {
-      for (const name of ["aria-label", "alt", "content"]) {
+    for (const element of document.querySelectorAll("[aria-label], [alt], [title], meta[content]")) {
+      for (const name of ["aria-label", "alt", "title", "content"]) {
         const original = element.getAttribute(name);
         if (Object.prototype.hasOwnProperty.call(english, original)) {
           attributes.push({ element, name, original });
         }
       }
     }
+    const videoSection = document.getElementById("video");
     const applyLanguage = () => {
       const language = chooseLanguage();
       document.documentElement.lang = language;
@@ -289,6 +296,14 @@
       }
       for (const { element, name, original } of attributes) {
         element.setAttribute(name, language === "en" ? english[original] : original);
+      }
+      if (videoSection) {
+        const videoId = language === "ja" ? videoSection.dataset.videoJa : videoSection.dataset.videoEn;
+        const player = videoSection.querySelector(".demo-video");
+        const source = `https://www.youtube-nocookie.com/embed/${videoId}`;
+        if (player.src !== source) player.src = source;
+        player.hidden = false;
+        videoSection.querySelector(".video-link").href = `https://www.youtube.com/watch?v=${videoId}`;
       }
     };
     try {
