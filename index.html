@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="./i18n.js?v=2"></script>
+    <script src="./i18n.js?v=3"></script>
     <meta name="theme-color" content="#f6f5ef">
     <meta name="description" content="PipoPapoは、ターミナルの完了・入力待ち・失敗を電子音で知らせるCLI。Codex / Claude Codeと連携し、作業の変化を音で届けます。">
     <meta property="og:type" content="website">
@@ -11,7 +11,7 @@
     <meta property="og:description" content="電子音と口笛で、作業の変化をお知らせ。Codex / Claude Codeと使える通知CLI。">
     <title>PipoPapo — ターミナルに、ちいさな声を。</title>
     <link rel="icon" href="./assets/icon.svg?v=2" type="image/svg+xml">
-    <link rel="stylesheet" href="./style.css?v=3">
+    <link rel="stylesheet" href="./style.css?v=4">
     <script src="./script.js?v=2" defer></script>
   </head>
   <body>
@@ -19,6 +19,11 @@
     <header class="header wrap">
       <a class="brand" href="./" aria-label="PipoPapo ホーム"><img class="brand-icon" src="./assets/icon.svg?v=2" width="33" height="33" alt="">PipoPapo<span class="cli-label">CLI</span></a>
       <nav aria-label="メインナビゲーション"><a href="#sounds">音を聴く</a><a href="./commands.html">コマンド</a><a class="nav-cta" href="#start">はじめる <span aria-hidden="true">↗</span></a></nav>
+      <div class="language-switch" role="group" aria-label="表示言語" hidden>
+        <a href="?lang=ja" data-language="ja" lang="ja" hreflang="ja">日本語</a>
+        <a href="?lang=en" data-language="en" lang="en" hreflang="en">English</a>
+        <a href="?lang=auto" data-language="auto">自動</a>
+      </div>
     </header>
     <main id="main">
       <section class="hero wrap" aria-labelledby="hero-title">

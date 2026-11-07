@@ -3,6 +3,8 @@
 (() => {
   // Japanese source strings are the keys for the English translation catalog.
   const english = {
+  "表示言語": "Display language",
+  "自動": "Auto",
   "紹介動画": "Watch PipoPapo in action",
   "PipoPapoの使い方を動画で紹介します。": "See how to use PipoPapo in this short demo.",
   "YouTubeで見る ↗": "Watch on YouTube ↗",
@@ -254,7 +256,24 @@
   "、または": " or "
 };
 
+  const requestedLanguage = new URL(location.href).searchParams.get("lang");
+  const storageKey = "pipopapo-language";
+  let preference = ["ja", "en", "auto"].includes(requestedLanguage) ? requestedLanguage : "auto";
+  try {
+    if (requestedLanguage === "auto") {
+      localStorage.removeItem(storageKey);
+    } else if (preference !== "auto") {
+      localStorage.setItem(storageKey, preference);
+    } else {
+      const savedLanguage = localStorage.getItem(storageKey);
+      if (savedLanguage === "ja" || savedLanguage === "en") preference = savedLanguage;
+    }
+  } catch {
+    // The URL selection still works when browser storage is unavailable.
+  }
+
   const chooseLanguage = () => {
+    if (preference !== "auto") return preference;
     const preferred = navigator.languages?.length ? navigator.languages : [navigator.language];
     for (const language of preferred) {
       const base = String(language).toLowerCase().split("-")[0];
@@ -309,6 +328,21 @@
     try {
       applyLanguage();
       window.addEventListener("languagechange", applyLanguage);
+      const languageSwitch = document.querySelector(".language-switch");
+      if (languageSwitch) {
+        const links = languageSwitch.querySelectorAll("a[data-language]");
+        const updateLinks = () => {
+          for (const link of links) {
+            const url = new URL(location.href);
+            url.searchParams.set("lang", link.dataset.language);
+            link.href = url.href;
+          }
+        };
+        languageSwitch.querySelector(`[data-language="${preference}"]`).setAttribute("aria-current", "true");
+        updateLinks();
+        window.addEventListener("hashchange", updateLinks);
+        languageSwitch.hidden = false;
+      }
     } finally {
       delete document.documentElement.dataset.localizing;
     }

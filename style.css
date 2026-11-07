@@ -16,6 +16,51 @@
   background: var(--ink);
 }
 
+.language-switch:not([hidden]) {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 20px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.language-switch a {
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.language-switch a[aria-current] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.header:has(.language-switch:not([hidden])) > nav {
+  margin-left: auto;
+}
+
+@media (max-width: 650px) {
+  .header:has(.language-switch:not([hidden])) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-content: center;
+    gap: 5px 8px;
+  }
+
+  .header .language-switch {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 0;
+  }
+
+  .header:has(.language-switch:not([hidden])) > nav {
+    grid-column: 1 / -1;
+  }
+}
+
 /* English headings use spacing suited to Latin text. */
 html[data-localizing] body { visibility: hidden; }
 html:lang(en) h1 { letter-spacing: -1.5px; line-height: 1.25; }
