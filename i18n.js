@@ -3,6 +3,18 @@
 (() => {
   // Japanese source strings are the keys for the English translation catalog.
   const english = {
+  "低い単音": "A low note",
+  "中音の単音": "A mid note",
+  "高い単音": "A high note",
+  "上昇する2音": "Two rising notes",
+  "下降する2音": "Two falling notes",
+  "繰り返す2音": "Two repeated notes",
+  "上昇する3音": "Three rising notes",
+  "下降する3音": "Three falling notes",
+  "3音の和音": "A three-note chord",
+  "Previewボタンで試聴できます。別の音を選ぶと、再生中の音は停止します。": "Select Preview to listen. Choosing another sound stops the current preview.",
+  "音声を再生できませんでした。もう一度Previewを押してください。": "Audio playback failed. Select Preview to try again.",
+
   "PipoPapoは、完了・入力待ち・失敗を音で知らせるCLI。Codex / Claude Code / Antigravity CLI / Hermes Agentと連携できます。": "PipoPapo is an audio notification CLI for completion, input requests, and failures. Integrates with Codex, Claude Code, Antigravity CLI, and Hermes Agent.",
   "電子音・口笛・9種類の通知音で、作業の変化をお知らせ。4つのエージェントと使える通知CLI。": "Beeps, whistles, and nine chimes for your workflow. An audio notification CLI for four agents.",
   "Homebrew配布はmacOS 13以降（Apple Silicon / Intel）向けです。": "Homebrew binaries are available for macOS 13 or later (Apple Silicon / Intel).",

@@ -24,6 +24,11 @@
 .reference th, .reference td { padding: 12px 14px; vertical-align: top; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
 .reference tr:last-child td { border-bottom: none; }
 .reference td:first-child { min-width: 130px; }
+.preview-button { cursor: pointer; border: 1px solid var(--ink); border-radius: 6px; padding: 8px 16px; background: var(--paper); color: var(--ink); font: inherit; min-width: 88px; min-height: 44px; }
+.preview-button:hover, .preview-button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.preview-button:focus-visible { outline: 3px solid #476325; outline-offset: 3px; }
+.notes-previews audio { max-width: 240px; }
+.notes-previews th:last-child, .notes-previews td:last-child { width: 116px; }
 @media (max-width: 900px) {
   .reference-layout { grid-template-columns: 155px minmax(0, 1fr); gap: 28px; }
   .reference-section h2 { font-size: 23px; }
