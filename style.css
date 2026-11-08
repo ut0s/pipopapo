@@ -88,3 +88,25 @@ html:lang(en) .sound-card h3 { font-size: 21px; }
 .compatibility .wrap { flex-wrap: wrap; justify-content: center; gap: 12px 28px; text-align: center; }
 .compatibility p { white-space: normal; }
 .hero-note { overflow-wrap: anywhere; }
+
+/* Keep Latin text and command examples readable in both languages. */
+.eyebrow { font-size: 12px; }
+.lead { font-size: 16px; }
+nav, nav > a, .button, .text-link { font-size: 14px; }
+.language-switch a, .hero-note { font-size: 13px; }
+.section-heading > p, .section-copy, .feature-list, .start-grid p { font-size: 15px; }
+.small-note, .start-grid .small-note, .sound-card p { font-size: 14px; }
+.sound-card code { font-size: 14px; opacity: 1; }
+pre, .terminal pre { font-size: 15px; }
+.terminal pre code, .start-grid pre code { font-size: inherit; }
+.pill, .sound-number, .terminal-bar, .terminal-footer, .feature-list span,
+.compatibility span, .footer > span, .footer > a:last-child { font-size: 12px; }
+.sound-caption, html:lang(en) .sound-caption { font-size: 12px; }
+.machine-top, .screen-label, .screen-bottom, .machine-caption { font-size: 10px; }
+.header { height: auto; min-height: 112px; flex-wrap: wrap; gap: 16px; padding-block: 20px; }
+@media (max-width: 650px) {
+  .header { min-height: 112px; gap: 12px; }
+  .lead { font-size: 15px; }
+  pre, .terminal pre { font-size: 14px; }
+  .eyebrow { letter-spacing: 1px; }
+}
