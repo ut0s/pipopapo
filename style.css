@@ -83,3 +83,8 @@ html:lang(en) .sound-card h3 { font-size: 21px; }
   html:lang(en) .header nav { gap: 0; }
   html:lang(en) .header .nav-cta { padding-inline: 10px; }
 }
+
+/* Keep the expanded host list readable on narrow screens. */
+.compatibility .wrap { flex-wrap: wrap; justify-content: center; gap: 12px 28px; text-align: center; }
+.compatibility p { white-space: normal; }
+.hero-note { overflow-wrap: anywhere; }

@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="./i18n.js?v=3"></script>
+    <script src="./i18n.js?v=4"></script>
     <meta name="theme-color" content="#f6f5ef">
-    <meta name="description" content="PipoPapoは、ターミナルの完了・入力待ち・失敗を電子音で知らせるCLI。Codex / Claude Codeと連携し、作業の変化を音で届けます。">
+    <meta name="description" content="PipoPapoは、完了・入力待ち・失敗を音で知らせるCLI。Codex / Claude Code / Antigravity CLI / Hermes Agentと連携できます。">
     <meta property="og:type" content="website">
     <meta property="og:title" content="PipoPapo — ターミナルに、ちいさな声を。">
-    <meta property="og:description" content="電子音と口笛で、作業の変化をお知らせ。Codex / Claude Codeと使える通知CLI。">
+    <meta property="og:description" content="電子音・口笛・9種類の通知音で、作業の変化をお知らせ。4つのエージェントと使える通知CLI。">
     <title>PipoPapo — ターミナルに、ちいさな声を。</title>
     <link rel="icon" href="./assets/icon.svg?v=2" type="image/svg+xml">
-    <link rel="stylesheet" href="./style.css?v=4">
+    <link rel="stylesheet" href="./style.css?v=5">
     <script src="./script.js?v=2" defer></script>
   </head>
   <body>
@@ -32,7 +32,7 @@
           <h1 id="hero-title">ターミナルに、<br>ちいさな<span class="voice">声</span>を。</h1>
           <p class="lead">終わったよ。ちょっと見て。うまくいかなかった。<br>画面の向こうの変化を、電子音と口笛でお知らせ。<br>PipoPapo は、あなたの作業に寄り添う通知CLIです。</p>
           <div class="hero-actions"><a class="button primary" href="#sounds">サウンドを試す <span aria-hidden="true">↗</span></a><a class="text-link" href="#start">導入について <span aria-hidden="true">→</span></a></div>
-          <p class="hero-note">Rust製 CLI <span>／</span> Codex &amp; Claude Code <span>／</span> ローカル音声合成</p>
+          <p class="hero-note">Rust製 CLI <span>／</span> Codex / Claude Code / Antigravity / Hermes <span>／</span> ローカル音声合成</p>
         </div>
         <div class="sound-machine" aria-label="電子音をイメージしたイラスト">
           <div class="machine-top"><span>PPPP / SOUND UNIT</span><span class="machine-light"></span></div>
@@ -41,7 +41,7 @@
           <div class="sound-caption"><span class="star" aria-hidden="true">✳</span> ことばの代わりに、ちょっとした音。</div>
         </div>
       </section>
-      <div class="compatibility"><div class="wrap"><span>SMALL CLI. NICE COMPANY.</span><p>Codex <b>＋</b> Claude Code <b>＋</b> Your terminal</p><span>コマンドひとつで、音のある作業へ。</span></div></div>
+      <div class="compatibility"><div class="wrap"><span>SMALL CLI. NICE COMPANY.</span><p>Codex <b>＋</b> Claude Code <b>＋</b> Antigravity CLI <b>＋</b> Hermes Agent</p><span>コマンドひとつで、音のある作業へ。</span></div></div>
       <section class="section wrap usage-layout" id="video" aria-labelledby="video-title"
         data-video-ja="MjrD0hFIDKI" data-video-en="eAgghRwu2yM">
         <div>
@@ -78,11 +78,27 @@
       </div></section>
       <section class="section wrap" id="start" aria-labelledby="start-title">
         <div class="section-heading"><div><p class="eyebrow">03 / GET STARTED</p><h2 id="start-title">あなたの作業にも、<br>ピポパポを。</h2></div><p>CLI名は <code>pppp</code>。<br>Pluginの導入も、ひとつのコマンドから。</p></div>
-        <div class="start-grid"><article class="install-card"><span class="pill">AVAILABLE NOW</span><h3>Homebrewで、手軽に。</h3><p>Homebrewからインストールできます。<br>次のコマンドで、すぐに使いはじめられます。</p><pre class="install-command"><code>brew install ut0s/pipopapo/pppp</code></pre><p class="small-note">macOS 13以降、Apple Silicon / Intel、Linux（x86_64）に対応。<br><a class="text-link" href="https://github.com/ut0s/homebrew-pipopapo">Homebrew Tap ↗</a> ／ <a class="text-link" href="https://github.com/ut0s/homebrew-pipopapo/releases/tag/v0.1.0">v0.1.0 リリース ↗</a></p></article><article class="plugin-card"><span class="pill outline">AFTER INSTALLATION</span><h3>エージェントと、いっしょに。</h3><p><code>pppp</code> の導入後、使うホストを選んでセットアップ。</p><pre><code><span class="comment"># Codex</span>
+        <div class="start-grid"><article class="install-card"><span class="pill">AVAILABLE NOW</span><h3>Homebrewで、手軽に。</h3><p>Homebrewからインストールできます。<br>次のコマンドで、すぐに使いはじめられます。</p><pre class="install-command"><code>brew install ut0s/pipopapo/pppp</code></pre><p class="small-note">Homebrew配布はmacOS 13以降（Apple Silicon / Intel）向けです。<br><a class="text-link" href="https://github.com/ut0s/homebrew-pipopapo">Homebrew Tap ↗</a> ／ <a class="text-link" href="https://github.com/ut0s/homebrew-pipopapo/releases/tag/v0.1.1">v0.1.1 リリース ↗</a></p><p class="small-note">Linux（x86_64）はソースからビルドできます。再生にはALSAと出力デバイスが必要です。</p></article><article class="plugin-card"><span class="pill outline">AFTER INSTALLATION</span><h3>エージェントと、いっしょに。</h3><p><code>pppp</code> の導入後、使うホストを選んでセットアップ。</p><pre><code><span class="comment"># Codex</span>
 pppp setup codex
 
 <span class="comment"># Claude Code</span>
-pppp setup claude</code></pre><p class="small-note">セットアップ後はホストを再起動するか、新しいチャットを開始してHookを信頼してください。Codexの最終失敗通知はSkillから明示的に呼び出します。</p></article></div>
+pppp setup claude
+
+<span class="comment"># Antigravity CLI / Hermes Agent</span>
+pppp setup antigravity
+pppp setup hermes</code></pre><p class="small-note">セットアップ後はホストを再起動するか、新しいチャットを開始してHookを信頼してください。Codexの最終失敗通知はSkillから明示的に呼び出します。</p><p class="small-note">Antigravity CLI・Hermes Agent連携と通知音プリセットは、対応版CLIが必要です。公開済みv0.1.1には含まれません。</p></article></div>
+      </section>
+      <section class="section wrap" id="features" aria-labelledby="features-title">
+        <div class="section-heading"><div><p class="eyebrow">CUSTOMIZE YOUR CUES</p><h2 id="features-title">通知の種類に、音を合わせる。</h2></div><p>完了・入力待ち・失敗、ツールの開始・完了。それぞれの通知音をホストごとに保存できます。</p></div>
+        <div class="start-grid"><article class="install-card"><h3>単音・2音・3音の、9種類。</h3><p>低・中・高の単音、上昇・下降・繰り返し、和音。本文に依存しない短い音で、状態を聞き分けられます。</p><pre><code>pppp notify completed --sound triple-chord
+pppp render notes --sound double-rise -o notes.wav</code></pre></article><article class="plugin-card"><h3>ツール通知は、必要なときだけ。</h3><p>ツール開始・完了の通知は既定で無効です。start / complete / bothで選び、noneで戻せます。</p><pre><code>pppp plugin configure codex \
+  --completed-sound triple-chord \
+  --input-required-sound double-repeat \
+  --failed-sound triple-fall \
+  --tool-events both \
+  --tool-start-sound single-low \
+  --tool-complete-sound single-high</code></pre></article></div>
+        <p class="small-note">Antigravity CLI・Hermes Agent連携と通知音プリセットは、対応版CLIが必要です。公開済みv0.1.1には含まれません。</p><p><a class="text-link" href="./commands.html#presets">プリセットと設定の詳細 →</a></p>
       </section>
       <section class="closing wrap"><span aria-hidden="true">✳</span><p>画面から目を離しても、<br>作業とは、つながっていられる。</p><a class="text-link" href="#sounds">もう一度、聴いてみる ↗</a></section>
     </main>
